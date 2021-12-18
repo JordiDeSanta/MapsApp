@@ -26,6 +26,14 @@ class _FullScreenMapState extends State<FullScreenMap> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
+            child: Icon(Icons.location_city),
+            onPressed: () {
+              mapController.addSymbol(SymbolOptions(
+                  draggable: true, geometry: center, textField: 'Mountain'));
+            },
+          ),
+          SizedBox(height: 5),
+          FloatingActionButton(
             child: Icon(Icons.zoom_in),
             onPressed: () {
               mapController.animateCamera(CameraUpdate.zoomIn());
