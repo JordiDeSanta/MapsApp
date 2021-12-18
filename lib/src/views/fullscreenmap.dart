@@ -11,13 +11,17 @@ class _FullScreenMapState extends State<FullScreenMap> {
 
   void _onMapCreated(MapboxMapController controller) {
     mapController = controller;
+    return;
   }
 
   @override
   Widget build(BuildContext context) {
     return MapboxMap(
       onMapCreated: _onMapCreated,
-      initialCameraPosition: const CameraPosition(target: LatLng(0.0, 0.0)),
+      accessToken:
+          "sk.eyJ1Ijoiam9yZDFkZXYiLCJhIjoiY2t4YnpvZ2cxNGFyYTJ1cW83ZnRvN3hkOCJ9.M31CkMhz63RewDSTGPhw2Q",
+      initialCameraPosition: const CameraPosition(
+          target: LatLng(-33.51116466234621, -70.60739170732393)),
     );
   }
 }
